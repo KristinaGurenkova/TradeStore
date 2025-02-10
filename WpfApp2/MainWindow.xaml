@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Окно авторизации" Height="311" Width="342" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="20" Margin="0 10 0 0 " FontFamily="Comic Sans MS"/>
+            <TextBlock Text="Логин" FontSize="15" Margin="0 60 0 0 " Width="239" FontFamily="Comic Sans MS"/>
+            <TextBox x:Name="loginTextBox" Width="243" FontFamily="Comic Sans MS"/>
+            <TextBlock Text="Пароль" FontSize="15" Margin="0 5 0 0 " Width="239" FontFamily="Comic Sans MS"/>
+            <PasswordBox x:Name="passBox" Width="243" FontFamily="Comic Sans MS" />
+            <Button Height="26" Width="131" Margin="0 20 0 0" Content="Войти" x:Name="loginIn" Click="loginIn_Click" FontFamily="Comic Sans MS"/>
+            <Button Height="26" Width="131" Margin="0 10 0 0" Content="Войти как гость" x:Name="loginInGuest" Click="loginInGuest_Click" FontFamily="Comic Sans MS" />
+        </StackPanel>
+    </Grid>
+</Window>
