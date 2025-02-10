@@ -32,35 +32,7 @@ namespace WpfApp2.Views
 
 		private void SaveButton_Click(object sender, RoutedEventArgs e)
 		{
-			try
-			{
-				Product.ProductArticleNumber = ArticleProd.Text;
-				Product.ProductName = NameProd.Text;
-				Product.ProductCost = double.Parse(PriceProd.Text);
-				Product.ProductQuantityInStock = int.Parse(CountProd.Text);
-				Product.ProductDiscountAmount = double.Parse(Disc.Text);
-				Product.ProductMaxDiscount = double.Parse(MaxDisc.Text);
-
-				var provider = _tradeEntities.Providers.SingleOrDefault(p => p.ProviderName == Provider.Text);
-				if (provider != null) Product.ProviderID = provider.ProviderID;
-
-				var manufact = _tradeEntities.Manufacturers.SingleOrDefault(m => m.ManufacturerName == Manufact.Text);
-				if (manufact != null) Product.ManufacturerID = manufact.ManufacturerID;
-
-				var category = _tradeEntities.Categories.SingleOrDefault(c => c.CategoryName == Category.Text);
-				if (category != null) Product.CategoryID = category.CategoryID;
-
-				_tradeEntities.SaveChanges();
-				MessageBox.Show("Товар обновлён");
-			}
-			catch
-			{
-				MessageBox.Show("Ошибка при обновлении товара");
-			}
-		}
-
-		private void BackButton_Click(object sender, RoutedEventArgs e)
-		{
+			MessageBox.Show("Товар обновлён");
 			this.Close();
 		}
 	}

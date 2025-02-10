@@ -24,7 +24,6 @@
             <TextBlock Text="Категория" FontSize="15" Margin="0 5 0 0 " Width="239" FontFamily="Comic Sans MS"/>
             <TextBox x:Name="Category"  Width="243" FontFamily="Comic Sans MS" />
             <Button Height="26" Width="131" Margin="0 20 0 0" Content="Сохранить" x:Name="SaveButton" FontFamily="Comic Sans MS" Click="SaveButton_Click"/>
-            <Button Height="26" Width="131" Margin="0 10 0 0" Content="Назад" x:Name="BackButton" FontFamily="Comic Sans MS" Click="BackButton_Click" />
         </StackPanel>
     </Grid>
 </Window>

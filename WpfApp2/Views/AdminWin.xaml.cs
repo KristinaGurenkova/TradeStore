@@ -58,6 +58,30 @@ namespace WpfApp2.Views
 			{
 				EditProductWin editProductWin = new EditProductWin(selectedProduct);
 				editProductWin.ShowDialog();
+				try
+				{
+					selectedProduct.ProductArticleNumber = editProductWin.ArticleProd.Text;
+					selectedProduct.ProductName = editProductWin.NameProd.Text;
+					selectedProduct.ProductCost = double.Parse(editProductWin.PriceProd.Text);
+					selectedProduct.ProductQuantityInStock = int.Parse(editProductWin.CountProd.Text);
+					selectedProduct.ProductDiscountAmount = double.Parse(editProductWin.Disc.Text);
+					selectedProduct.ProductMaxDiscount = double.Parse(editProductWin.MaxDisc.Text);
+
+					var provider = tradeEntities.Providers.SingleOrDefault(p => p.ProviderName == editProductWin.Provider.Text);
+					if (provider != null) selectedProduct.ProviderID = provider.ProviderID;
+
+					var manufact = tradeEntities.Manufacturers.SingleOrDefault(m => m.ManufacturerName == editProductWin.Manufact.Text);
+					if (manufact != null) selectedProduct.ManufacturerID = manufact.ManufacturerID;
+
+					var category = tradeEntities.Categories.SingleOrDefault(c => c.CategoryName == editProductWin.Category.Text);
+					if (category != null) selectedProduct.CategoryID = category.CategoryID;
+
+					tradeEntities.SaveChanges();
+				}
+				catch
+				{
+					MessageBox.Show("Ошибка при обновлении товара");
+				}
 				ProductDataGrid.ItemsSource = tradeEntities.Products.ToList();
 			}
 			else
